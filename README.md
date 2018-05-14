@@ -1,1 +1,1 @@
-# Boilerplate for Vertics projects
+# Boilerplate for Nibs projects
