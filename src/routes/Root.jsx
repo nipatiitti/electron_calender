@@ -14,14 +14,26 @@ import { Provider } from 'react-redux'
 import history from './history'
 
 import Header from '../containers/HeaderContainer'
+import DatePicker from '../containers/DatePickerContainer'
+import Week from '../containers/WeekContainer'
+import Date from '../containers/DateContainer'
 
-const Root = ({ store }) => (
+const Root = ({ store, persistor }) => (
   <Provider store={store}>
     <PersistGate loading={<h1>Loading</h1>} persistor={persistor}>
       <Router history={history}>
         <div className="root-container">
+          <Header />
           <Switch>
-            <Route exact path='/' component={<Header />} />
+            <Route exact path='/'>
+              <DatePicker />
+            </Route>
+            <Route exact path='/week/'>
+              <Week />
+            </Route>
+            <Route exact path='/week/:date'>
+              <Date />
+            </Route>
           </Switch>
         </div>
       </Router>

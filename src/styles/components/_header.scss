@@ -1,3 +1,22 @@
 .header {
   font-size: 1.25em;
+  display: flex;
+  justify-content: center;
+
+  padding: 2em;
+  background: linear-gradient(135deg, $primary 0%, $middle_tone 42%);
+
+  box-shadow: 0 0 2px 1px black;
+  border-radius: 0 0 10px 10px;
+
+  margin-bottom: 2em;
+
+  a {
+    text-decoration: none;
+    color: $dark-grey;
+  
+    &:hover {
+      color: $grey;
+    }
+  }
 }

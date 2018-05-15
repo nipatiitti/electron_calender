@@ -1,0 +1,63 @@
+.DatePicker {
+    display: flex;
+    flex-direction: column;
+    color: $middle_tone;
+    margin: 0 1em 0 1em;
+  
+    .datePicker {
+      display: flex;
+      flex-direction: column;
+  
+      .monthHeader {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+  
+      .dateGrid {
+        display: flex;
+        flex-direction: column;
+  
+        .dateGridRow {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+  
+          .dateItem {
+            padding: 1em 0;
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+
+  
+            p {
+              margin: 0;
+            }
+          }
+
+          &-header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+          }
+
+          &:hover {
+              background-color: $highlight;
+              border-radius: 5px;
+              box-shadow: 0 0 1px 2px black;
+              color: $primary;
+          }
+        }
+      }
+  
+      &.hide {
+        display: none;
+      }
+  
+    }
+  
+  }
+  

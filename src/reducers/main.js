@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import user from './user.js'
+import date from './date'
 
 
 const main = combineReducers({
-  user
+  date
 })
 
 export default main

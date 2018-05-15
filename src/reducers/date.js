@@ -1,18 +1,15 @@
+import moment from 'moment'
+
 const initialState = {
-  loggedIn: false,
-  token: ''
+  date: moment()
 }
 
 const login = (state = initialState, action) => {
   switch (action.type) {
-    case 'SAVE_TOKEN':
+    case 'SAVE_DATE':
       return Object.assign({}, state, {
-        loggedIn: true,
-        token: action.token
+        date: action.date.toString()
       })
-
-    case 'LOGOUT':
-      return initialState
 
     default:
       return state

@@ -18,7 +18,7 @@ html, body {
 
 body {
   font-family: "Roboto"; // TODO
-  background-color: whitesmoke;
+  background-color: $primary_blue;
 }
 
 .container {
@@ -30,4 +30,8 @@ body {
   /* Class which overrides styles of <Link> */
   text-decoration: none;
   color: inherit;
+}
+
+.icon {
+  cursor: pointer;
 }
