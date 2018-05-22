@@ -1,0 +1,13 @@
+.week {
+    &-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+.hintText {
+    text-align: center;
+    color: lightgrey;
+    font-size: .7em;
+}

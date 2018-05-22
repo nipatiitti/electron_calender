@@ -1,0 +1,155 @@
+.date {
+    &-container {
+        flex: 1;
+        text-align: center;
+        a {
+            text-decoration: underline salmon;
+            color: $primary;
+            margin-bottom: 1em;
+            &:hover {
+              color: $grey;
+            }
+        }
+
+    }
+}
+ 
+
+
+.event-item {
+
+    margin: 5px 2em 0 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 1em 0 1em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 1px 0px black;
+
+    &.green {
+        background-color: lightgreen;
+    }
+
+    &.yellow {
+        background-color: gold;
+    }
+
+    &.orange {
+        background-color: salmon;
+    }
+
+    &.red {
+        background-color: brown;
+        color: white;
+    }
+}
+
+.add-button {
+    margin: 0 2em .5em 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: .5em;
+    padding: 1em 0 1em 0;
+    border-radius: 5px;
+    background-color: $highlight;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid white;
+    }
+}
+
+.end-button {
+    height: 3em;
+    margin: 1em 3em 0 3em;
+    width: calc(100% - 6em);
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    border-radius: 2em;
+}
+
+.innerContainer {
+    background-color: white;
+    flex: 1;
+    width: 100%;
+    max-height: 50%;
+    max-width: 50%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-popup {
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    &.open {
+        height: 100%;
+        max-height: 100%;
+        transition: max-height 0.25s ease-in;
+    }
+
+    &.closed {
+        height: 100%;
+        max-height: 0px;
+        transition: max-height 0.25s ease-out;
+    }
+}
+
+.event-text {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.checkmark {
+    margin-left: 2em;
+    height: 2em;
+    width: 2em;
+    border: 2px solid black;
+    background-color: #FFF;
+    border-radius: .2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.deleteIcon {
+    margin-right: 2em;
+    height: 1.5em;
+    width: 1.5em;
+    border: 2px solid black;
+    background-color: orange;
+    border-radius: .2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+

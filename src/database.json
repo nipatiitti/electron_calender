@@ -1,10 +1,89 @@
 {
-    "14-5-2018": {
-        "events": [
-            {
-                "name": "Enkun essee",
-                "priority_level": "Skippable"
-            }
-        ]
-    }
+  "14-5-2018": {
+    "events": [
+      {
+        "name": "Enkun essee",
+        "priority_level": "Skip",
+        "done": true
+      },
+      {
+        "name": "Effort",
+        "priority_level": "Highschool depends on it",
+        "done": true
+      },
+      {
+        "name": "Testi 4",
+        "priority_level": "Notice",
+        "done": true
+      },
+      {
+        "name": "Testi2",
+        "priority_level": "Must do",
+        "done": false
+      }
+    ]
+  },
+  "17-5-2018": {
+    "events": []
+  },
+  "21-5-2018": {
+    "events": [
+      {
+        "name": "Enkun essee",
+        "priority_level": "Notice",
+        "done": false
+      }
+    ]
+  },
+  "22-5-2018": {
+    "events": [
+      {
+        "name": "Ei tärkee",
+        "priority_level": "Skip",
+        "done": true
+      },
+      {
+        "name": "Joku juttu",
+        "priority_level": "Highschool depends on it",
+        "done": true
+      }
+    ]
+  },
+  "19-5-2018": {
+    "events": [
+      {
+        "name": "Bilsan projekti",
+        "priority_level": "Skip",
+        "done": false
+      },
+      {
+        "name": "Äikän essee",
+        "priority_level": "Must do",
+        "done": false
+      }
+    ]
+  },
+  "18-5-2018": {
+    "events": [
+      {
+        "name": "Hmm",
+        "priority_level": "Skip",
+        "done": false
+      },
+      {
+        "name": "Hmm2",
+        "priority_level": "Highschool depends on it",
+        "done": false
+      }
+    ]
+  },
+  "19-6-2018": {
+    "events": [
+      {
+        "name": "xd",
+        "priority_level": "Must do",
+        "done": false
+      }
+    ]
+  }
 }

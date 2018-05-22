@@ -57,7 +57,7 @@ const DateGrid = ({ days, onClick, year, month, hide, week }) => {
         } else {
           return (
             <div
-              className='dateItem'
+              className={`dateItem ${moment(`${day}-${month + 1}-${year}`, 'D-M-YYYY').format('l') === moment().format('l') ? 'today' : ''}`}
               key={i+j}
               onClick={
                 () => onClick(moment(`${day}-${month + 1}-${year}`, 'D-M-YYYY'))

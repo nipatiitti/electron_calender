@@ -28,11 +28,14 @@ const Root = ({ store, persistor }) => (
             <Route exact path='/'>
               <DatePicker />
             </Route>
-            <Route exact path='/week/'>
+            <Route exact path='/week'>
               <Week />
             </Route>
-            <Route exact path='/week/:date'>
+            <Route exact path='/:date/'>
               <Date />
+            </Route>
+            <Route exact path='/week/:date'>
+              <Week />
             </Route>
           </Switch>
         </div>

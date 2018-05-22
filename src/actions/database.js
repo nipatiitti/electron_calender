@@ -13,14 +13,13 @@ const defaultDate = () => moment().format('D-M-YYYY')
 export const query = ( type = 'all') => {
     switch (type) {
         case 'all':
-            return () => {
-                return new Promise((resolve, reject) => {
+            return new Promise((resolve, reject) => {
                     fs.readFile(url, (err, data) => {  
                         if (err) reject(err)
-                        resolve(JSON.parse(data))
+                        let dataToResolve = JSON.parse(data)
+                        resolve(dataToResolve)
                     })
                 })
-            }
         
         case 'date':
             return (date = defaultDate()) => {
@@ -28,7 +27,13 @@ export const query = ( type = 'all') => {
                     fs.readFile(url, (err, data) => {
                         if (err) reject(err)
                         try {
-                            resolve(JSON.parse(data)[date])
+                            let dataToResolve = JSON.parse(data)[date]
+                            if(!dataToResolve) {
+                                resolve({
+                                    events: []
+                                })
+                            }
+                            resolve(dataToResolve)
                         } catch (err) {
                             resolve({
                                 events: []
@@ -43,15 +48,47 @@ export const query = ( type = 'all') => {
     }
 }
 
-export const write = (date = defaultDate(), events) => {
-    query('date')(date).then(data => {
-        let newEvents = [...data.events, ...events]
+export const write = (date = defaultDate(), event) => {
+    query('all').then(data => {
+        let newEvents
+        try {
+            newEvents = [...data[date].events, event]
+        } catch (e) {
+            newEvents = [event]
+        }
+        
         let newData = JSON.stringify(Object.assign({}, data, {
             [date]: {
                 events: newEvents
             }
         }), null, 2)
 
-        fs.writeFile(url, newData)
+        fs.writeFileSync(url, newData)
+    })
+}
+
+export const replace = (date = defaultDate(), event) => {
+    query('all').then(data => {
+        let newEvents = [...(data[date].events.filter(item => item.name !== event.name)), event]
+        let newData = JSON.stringify(Object.assign({}, data, {
+            [date]: {
+                events: newEvents
+            }
+        }), null, 2)
+        
+        fs.writeFileSync(url, newData)
+    })
+}
+
+export const remove = (date = defaultDate(), event) => {
+    query('all').then(data => {
+        let newEvents = data[date].events.filter(item => item.name !== event.name)
+        let newData = JSON.stringify(Object.assign({}, data, {
+            [date]: {
+                events: newEvents
+            }
+        }), null, 2)
+
+        fs.writeFileSync(url, newData)
     })
 }

@@ -26,6 +26,20 @@ body {
   margin: 1em auto 0 auto;
 }
 
+input {
+  border: none;
+
+  padding: 1em 0em 1em .5em;
+  border-radius: .6em;
+  border: 1px solid $dark_grey;
+  margin: 1em;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 1px 1px black;
+  }
+}
+
 .withoutDecoration {
   /* Class which overrides styles of <Link> */
   text-decoration: none;

@@ -1,8 +1,6 @@
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 
-import { query, write } from '../actions/database'
-
 import Date from '../components/Date'
 
 const mapStateToProps = (state, props) => {
